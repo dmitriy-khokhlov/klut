@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Klut.Tokens
+namespace Klut.Streams
 {
-    class Token
+    class CodeStream : Stream<byte>
     {
-        public string Lexeme { get; set; }
-
-        public TokenType Type { get; set; }
     }
 }

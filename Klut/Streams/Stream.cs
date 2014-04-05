@@ -8,24 +8,24 @@ namespace Klut.Streams
 {
     class Stream<T>
     {
-        public delegate void ItemsAddedHandler( Stream<T> sender, int count );
+        public delegate void ItemsAddedHandler( int count );
 
-        private Queue<T> queue = new Queue<T>();
+        private Queue<T> _queue = new Queue<T>();
 
-        private ItemsAddedHandler onItemAdded;
+        private ItemsAddedHandler _onItemAdded;
 
         public void Send( T item ) {
-            queue.Enqueue( item );
-            onItemAdded( this, 1 );
+            _queue.Enqueue( item );
+            _onItemAdded( this, 1 );
         }
 
         public T Receive() {
-            return queue.Dequeue();
+            return _queue.Dequeue();
         }
 
         public event ItemsAddedHandler OnItemAdded {
-            add { onItemAdded += value; }
-            remove { onItemAdded -= value; }
+            add { _onItemAdded += value; }
+            remove { _onItemAdded -= value; }
         }
     }
 }
