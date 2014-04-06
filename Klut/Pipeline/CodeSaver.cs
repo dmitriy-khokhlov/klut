@@ -1,7 +1,7 @@
 ﻿using Klut.Parsing;
 using Klut.Streams;
 
-namespace Klut
+namespace Klut.Pipeline
 {
     class CodeSaver
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Klut.Streams;
 
-namespace Klut
+namespace Klut.Pipeline
 {
     class TextProvider
     {

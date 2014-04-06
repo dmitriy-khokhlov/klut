@@ -1,15 +1,14 @@
 ﻿using Klut.Streams;
-using Klut.Tokens;
 
-namespace Klut
+namespace Klut.Pipeline
 {
-    class Parser
+    class Optimizer
     {
-        public TokenStream InputStream { get; private set; }
+        public ParseStream InputStream { get; private set; }
 
         public ParseStream OutputStream { get; private set; }
 
-        public Parser( TokenStream inputStream )
+        public Optimizer( ParseStream inputStream )
         {
             InputStream = inputStream;
             InputStream.OnItemAdded += _handleNewInput;
@@ -20,9 +19,7 @@ namespace Klut
         {
             for ( ; count > 0; count-- )
             {
-                Token inputToken = InputStream.Receive();
-
-                //todo: implement _handleNewInput
+                OutputStream.Send( InputStream.Receive() );
             }
         }
     }

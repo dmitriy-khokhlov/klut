@@ -36,16 +36,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeGenerator.cs" />
-    <Compile Include="CodeSaver.cs" />
-    <Compile Include="Lexer.cs" />
-    <Compile Include="Optimizer.cs" />
-    <Compile Include="Parser.cs" />
     <Compile Include="Parsing\ParseTree.cs" />
+    <Compile Include="Pipeline\CodeGenerator.cs" />
+    <Compile Include="Pipeline\CodeSaver.cs" />
+    <Compile Include="Pipeline\Lexer.cs" />
+    <Compile Include="Pipeline\Optimizer.cs" />
+    <Compile Include="Pipeline\Parser.cs" />
+    <Compile Include="Pipeline\Semanter.cs" />
+    <Compile Include="Pipeline\TextProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Semanter.cs" />
-    <Compile Include="TextProvider.cs" />
     <Compile Include="Streams\CodeStream.cs" />
     <Compile Include="Streams\ParseStream.cs" />
     <Compile Include="Streams\TextStream.cs" />
@@ -57,9 +57,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pipeline\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
