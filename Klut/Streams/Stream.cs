@@ -10,16 +10,19 @@ namespace Klut.Streams
 
         private ItemsAddedHandler _onItemAdded;
 
-        public void Send( T item ) {
+        public void Send( T item )
+        {
             _queue.Enqueue( item );
-            _onItemAdded( this, 1 );
+            _onItemAdded( 1 );
         }
 
-        public T Receive() {
+        public T Receive()
+        {
             return _queue.Dequeue();
         }
 
-        public event ItemsAddedHandler OnItemAdded {
+        public event ItemsAddedHandler OnItemAdded
+        {
             add { _onItemAdded += value; }
             remove { _onItemAdded -= value; }
         }
