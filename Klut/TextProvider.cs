@@ -1,15 +1,11 @@
-﻿using Klut.Streams;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Klut.Streams;
 
 namespace Klut
 {
     class TextProvider
     {
-        public TextStream OutputStream { public get; private set; }
+        public TextStream OutputStream { get; private set; }
 
         public TextProvider()
         {
