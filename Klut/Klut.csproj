@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +37,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FinitAutomata\Dfa.cs" />
+    <Compile Include="FinitAutomata\DfaState.cs" />
     <Compile Include="Parsing\ParseTree.cs" />
     <Compile Include="Pipeline\CodeGenerator.cs" />
     <Compile Include="Pipeline\CodeSaver.cs" />

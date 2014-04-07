@@ -29,5 +29,7 @@ namespace Klut.Streams
         }
 
         public event EventHandler<ItemsAddedEventArgs> ItemsAdded = delegate {};
+
+        // todo: add end of stream event
     }
 }
