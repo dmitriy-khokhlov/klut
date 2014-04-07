@@ -19,9 +19,9 @@ namespace Klut.Pipeline
 
         public void ReadFile( String filePath )
         {
-            //todo: implement ReadFile as it should be
-            string fileContents = "print( \"Hello, World!\" );\n";
-            foreach ( char c in fileContents )
+            // todo: temporary fake implementation, rewrite
+            const string fileContents = "print( \"Hello, World!\" );\n";
+            foreach ( var c in fileContents )
             {
                 OutputStream.Send( c );
             }

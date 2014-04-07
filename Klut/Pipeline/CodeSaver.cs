@@ -12,15 +12,16 @@ namespace Klut.Pipeline
         public CodeSaver( CodeStream inputStream )
         {
             InputStream = inputStream;
+            InputStream.ItemsAdded += inputStream_ItemsAdded;
         }
 
-        private void _handleNewInput( int count )
+        private void inputStream_ItemsAdded( object sender, CodeStream.ItemsAddedEventArgs eventArgs )
         {
-            for ( ; count > 0; count-- )
+            for ( int i = 0; i < eventArgs.Count; i++ )
             {
                 byte inputTree = InputStream.Receive();
 
-                // todo: implement handleNewInput
+                //todo: implement inputStream_ItemsAdded
             }
         }
     }

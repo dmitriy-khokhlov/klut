@@ -1,19 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Klut.Streams
 {
     class Stream<T>
     {
-        public delegate void ItemsAddedHandler( int count );
+        public class ItemsAddedEventArgs
+        {
+            public int Count { get; set; }
+
+            public ItemsAddedEventArgs( int count )
+            {
+                Count = count;
+            }
+        }
 
         private Queue<T> _queue = new Queue<T>();
-
-        private ItemsAddedHandler _onItemAdded;
 
         public void Send( T item )
         {
             _queue.Enqueue( item );
-            _onItemAdded( 1 );
+            ItemsAdded( this, new ItemsAddedEventArgs( 1 ) );
         }
 
         public T Receive()
@@ -21,10 +28,6 @@ namespace Klut.Streams
             return _queue.Dequeue();
         }
 
-        public event ItemsAddedHandler OnItemAdded
-        {
-            add { _onItemAdded += value; }
-            remove { _onItemAdded -= value; }
-        }
+        public event EventHandler<ItemsAddedEventArgs> ItemsAdded = delegate {};
     }
 }

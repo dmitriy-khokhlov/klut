@@ -12,17 +12,17 @@ namespace Klut.Pipeline
         public CodeGenerator( ParseStream inputStream )
         {
             InputStream = inputStream;
-            InputStream.OnItemAdded += _handleNewInput;
+            InputStream.ItemsAdded += inputStream_ItemsAdded;
             OutputStream = new CodeStream();
         }
 
-        private void _handleNewInput( int count )
+        private void inputStream_ItemsAdded( object sender, ParseStream.ItemsAddedEventArgs eventArgs )
         {
-            for ( ; count > 0; count-- )
+            for ( int i = 0; i < eventArgs.Count; i++ )
             {
                 ParseTree inputTree = InputStream.Receive();
 
-                // todo: implement _handleNewInput
+                // todo: implement inputStream_ItemsAdded
             }
         }
     }

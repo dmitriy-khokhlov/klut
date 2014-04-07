@@ -11,17 +11,17 @@ namespace Klut.Pipeline
         public Lexer( TextStream inputStream )
         {
             InputStream = inputStream;
-            InputStream.OnItemAdded += _handleNewInput;
+            InputStream.ItemsAdded += inputStream_ItemsAdded;
             OutputStream = new TokenStream();
         }
 
-        private void _handleNewInput( int count )
+        private void inputStream_ItemsAdded( object sender, TextStream.ItemsAddedEventArgs eventArgs )
         {
-            for ( ; count > 0; count-- )
+            for ( int i = 0; i < eventArgs.Count; i++ )
             {
                 char inputChar = InputStream.Receive();
 
-                //todo: implement _handleNewInput
+                //todo: implement inputStream_ItemsAdded
             }
         }
     }
