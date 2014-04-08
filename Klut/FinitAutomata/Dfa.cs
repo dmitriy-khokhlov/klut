@@ -18,14 +18,23 @@ namespace Klut.FinitAutomata
         {
             // todo: temporary fake implementation, rewrite
 
-            _initialState = new DfaState( TokenType.Identifier );
+            _initialState = new DfaState();
+
+            var identifierState = new DfaState( TokenType.Identifier );
 
             for ( char c = 'a'; c <= 'z'; c++ )
             {
-                _initialState.AddTransition( c, _initialState );
-                _initialState.AddTransition( Char.ToUpper( c ), _initialState );
+                _initialState.AddTransition( c, identifierState );
+                _initialState.AddTransition( Char.ToUpper( c ), identifierState );
+                identifierState.AddTransition( c, identifierState );
+                identifierState.AddTransition( Char.ToUpper( c ), identifierState );
             }
-            _initialState.AddTransition( '_', _initialState );
+            _initialState.AddTransition( '_', identifierState );
+            identifierState.AddTransition( '_', identifierState );
+            for ( char c = '0'; c <= '9'; c++ )
+            {
+                identifierState.AddTransition( c, identifierState );
+            }
 
             _initialState.AddTransition( '(',
                 new DfaState( TokenType.OpenParenthesis ) );
@@ -152,9 +161,10 @@ namespace Klut.FinitAutomata
                 GivenChar = givenChar;
                 IsValidFromInitialState = isValidFromInitialState;
 
-                _message = "Invalid transition. DFA last state: " +
-                    dfaLastState + ", given char: '" + givenChar + "'. " +
-                    ( isValidFromInitialState ? "Valid" : "Invalid" ) +
+                _message = "Attempt to transit DFA from state " + dfaLastState +
+                    " with char '" + givenChar +
+                    "'. Transition with this char is " +
+                    ( isValidFromInitialState ? "valid" : "invalid" ) +
                     " from initial state" +
                     ( isValidFromInitialState ? "" : " too" ) + ".";
             }

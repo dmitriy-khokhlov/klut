@@ -11,5 +11,10 @@
             Type = type;
             Lexeme = lexeme;
         }
+
+        public override string ToString()
+        {
+            return "( " + Type + ", `" + Lexeme + "` )";
+        }
     }
 }

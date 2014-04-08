@@ -23,7 +23,10 @@ namespace Klut.Pipeline
             {
                 Token inputToken = InputStream.Receive();
 
-                //todo: implement
+                // debug
+                System.Console.WriteLine( inputToken );
+
+                // todo: implement
             }
         }
 

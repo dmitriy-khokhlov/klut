@@ -25,6 +25,7 @@ namespace Klut.Pipeline
             {
                 OutputStream.Send( c );
             }
+            OutputStream.SendEndOfStream();
         }
     }
 }

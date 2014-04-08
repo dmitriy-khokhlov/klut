@@ -53,10 +53,10 @@ namespace Klut.FinitAutomata
 
         public override string ToString()
         {
-            string description = "";
+            string description = "( ";
 
             description += IsFinal
-                ? "Final (" + GetType( TokenType ).GetEnumName( FinalTokenType ) +
+                ? "Final (" + typeof(TokenType).GetEnumName( FinalTokenType ) +
                     ")"
                 : "Non-final";
 
@@ -66,6 +66,8 @@ namespace Klut.FinitAutomata
             {
                 description += ", with default transition";
             }
+
+            description += " )";
 
             return description;
         }
