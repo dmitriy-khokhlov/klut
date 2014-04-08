@@ -13,6 +13,7 @@ namespace Klut.Pipeline
         {
             InputStream = inputStream;
             InputStream.ItemsAdded += inputStream_ItemsAdded;
+            InputStream.EndOfStreamReceived += InputStream_EndOfStreamReceived;
             OutputStream = new ParseStream();
         }
 
@@ -22,8 +23,14 @@ namespace Klut.Pipeline
             {
                 Token inputToken = InputStream.Receive();
 
-                //todo: implement inputStream_ItemsAdded
+                //todo: implement
             }
+        }
+
+        private void InputStream_EndOfStreamReceived( object sender,
+            TokenStream.EndOfStreamReceivedEventArgs eventArgs )
+        {
+            // todo: implement
         }
     }
 }

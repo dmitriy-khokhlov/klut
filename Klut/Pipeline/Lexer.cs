@@ -15,11 +15,12 @@ namespace Klut.Pipeline
         public Lexer( TextStream inputStream )
         {
             InputStream = inputStream;
-            InputStream.ItemsAdded += inputStream_ItemsAdded;
+            InputStream.ItemsAdded += InputStream_ItemsAdded;
+            InputStream.EndOfStreamReceived += InputStream_EndOfStreamReceived;
             OutputStream = new TokenStream();
         }
 
-        private void inputStream_ItemsAdded( object sender,
+        private void InputStream_ItemsAdded( object sender,
             TextStream.ItemsAddedEventArgs eventArgs )
         {
             for ( int i = 0; i < eventArgs.Count; i++ )
@@ -28,7 +29,13 @@ namespace Klut.Pipeline
             }
         }
 
-        private void dfa_TokenRecognized( object sender,
+        private void InputStream_EndOfStreamReceived( object sender,
+            TextStream.EndOfStreamReceivedEventArgs eventArgs )
+        {
+            // todo: implement
+        }
+
+        private void Dfa_TokenRecognized( object sender,
             Dfa.TokenRecognizedEventArgs eventArgs )
         {
             OutputStream.Send( eventArgs.RecognizedToken );
