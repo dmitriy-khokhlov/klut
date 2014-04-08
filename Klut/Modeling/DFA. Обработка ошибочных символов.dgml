@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="4046902f-fb07-4b39-9209-e32af9c7f44a" Category="Category5" Bounds="306.23955607941,-263.511475547165,500.779752110302,243.671026736673" Group="Expanded" Label="Нефинальное состояние" UseManualLocation="True" />
+    <Node Id="ЛексемаНеСобрана" Category="Category2" Bounds="574.125837747933,-217.842775499763,212.89,178.0003" Group="Expanded" Label="Лексема не собрана" UseManualLocation="True" />
+    <Node Id="ЛексемаНеСобрана1" Category="Category2" Bounds="1.85622274607618,-216.922620157033,254.383333333333,290.847639724173" Group="Expanded" Label="Лексема не собрана" UseManualLocation="True" />
+    <Node Id="ЛексемаСобрана" Category="Category7" Bounds="-241.033749228614,-214.580820269775,212.89,324.663668051148" Group="Expanded" Label="Лексема собрана" UseManualLocation="True" />
+    <Node Id="ЛексемаСобрана1" Category="Category7" Bounds="326.239556079409,-223.511375547165,192.89,141.920299986602" Group="Expanded" Label="Лексема собрана" UseManualLocation="True" />
+    <Node Id="НачальноеСостояние" Category="Category4" Bounds="-217.011214642026,-174.580720269775,159.686666666667,85.9602" Group="Expanded" Label="Начальное состояние" UseManualLocation="True" />
+    <Node Id="НачальноеСостояние1" Category="Category4" Bounds="598.787198294988,-177.840634475093,159.686666666667,44" Group="Expanded" Label="Начальное состояние" UseManualLocation="True" />
+    <Node Id="НачальноеСостояние2" Category="Category4" Bounds="50.258190540751,-176.922520157033,139.651983803542,25.9600000309375" Label="Начальное состояние" />
+    <Node Id="НачальноеСостояние3" Category="Category4" Bounds="357.182156668346,-183.511275547166,139.649008554388,25.9599999866016" Label="Начальное состояние" />
+    <Node Id="НеналачьноеСостояние" Category="Category3" Bounds="594.129556079339,-103.840534475093,172.89,44" Group="Expanded" Label="Неналачьное состояние" UseManualLocation="True" />
+    <Node Id="НеначальноеСостояние" Category="Category8" Bounds="-221.033749228614,4.12254778137204,172.89,85.9602" Group="Expanded" Label="Неначальное состояние">
+      <Category Ref="Category3" />
+    </Node>
+    <Node Id="НеначальноеСостояние1" Category="Category3" Bounds="48.5550187767554,-49.0423168945313,152.89,25.96" Label="Неначальное состояние" UseManualLocation="True" />
+    <Node Id="НеначальноеСостояние2" Category="Category3" Bounds="346.23955607941,-127.551175560564,152.89,25.96" Label="Неначальное состояние" UseManualLocation="True" />
+    <Node Id="НетПерехода" Category="Category1" Bounds="244.300662638346,-338.515591676256,94.7466666666667,25.96" Label="Нет перехода" UseManualLocation="True" />
+    <Node Id="ОбычнаяРабота" Category="Comment" Bounds="-196.203810568946,-58.6204075622559,107.87,25.96" Label="Штатная работа" UseManualLocation="True" />
+    <Node Id="ОшибочныйСимволВТокене" Bounds="188.832666727702,-413.850662469404,183.056666666667,25.96" Label="Ошибочный символ в токене" UseManualLocation="True" />
+    <Node Id="ПервыйСимволВТекстеИлиВЭтойЛексеме" Category="Comment" Bounds="50.2570324537178,-120.962407073937,154.503333333333,41.92" Label="Первый символ в тексте&#xD;&#xA;или в этой лексеме" UseManualLocation="True" />
+    <Node Id="ПереходыИзНачальногоСостояния" Bounds="-41.9705529785156,-345.86599347678,217.87,41.9200000000001" Label="Переходы из начального состояния&#xD;&#xA;в самого себя." UseManualLocation="True" />
+    <Node Id="СохранитьТокен" Bounds="-190.790415895281,44.1226477813721,112.403333333333,25.96" Label="Сохранить токен" />
+    <Node Id="СохранитьТокен1" Bounds="-193.369547975359,-134.580620269775,112.403333333333,25.96" Label="Сохранить токен" UseManualLocation="True" />
+    <Node Id="ТекущееСостояниеПринудительноГенерируетТокен1" Category="Comment" Bounds="21.8562227460762,12.0049195671399,214.383333333333,41.92" Label="Текущее состояние принудительно&#xD;&#xA;сгенерировало токен" UseManualLocation="True" />
+    <Node Id="ФинальноеСостояние" Category="Category10" Bounds="-261.033749228614,-256.922720157033,537.273305308024,387.005667938405" Group="Expanded" Label="Финальное состояние" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="4046902f-fb07-4b39-9209-e32af9c7f44a" Target="ЛексемаНеСобрана" Category="Contains" />
+    <Link Source="4046902f-fb07-4b39-9209-e32af9c7f44a" Target="ЛексемаСобрана1" Category="Contains" />
+    <Link Source="ЛексемаНеСобрана" Target="НачальноеСостояние1" Category="Contains" />
+    <Link Source="ЛексемаНеСобрана" Target="НеналачьноеСостояние" Category="Contains" />
+    <Link Source="ЛексемаНеСобрана1" Target="НачальноеСостояние2" Category="Contains" />
+    <Link Source="ЛексемаНеСобрана1" Target="НеначальноеСостояние1" Category="Contains" />
+    <Link Source="ЛексемаНеСобрана1" Target="ПервыйСимволВТекстеИлиВЭтойЛексеме" Category="Contains" />
+    <Link Source="ЛексемаНеСобрана1" Target="ТекущееСостояниеПринудительноГенерируетТокен1" Category="Contains" />
+    <Link Source="ЛексемаСобрана" Target="НачальноеСостояние" Category="Contains" />
+    <Link Source="ЛексемаСобрана" Target="НеначальноеСостояние" Category="Contains" />
+    <Link Source="ЛексемаСобрана" Target="ОбычнаяРабота" Category="Contains" />
+    <Link Source="ЛексемаСобрана1" Target="НачальноеСостояние3" Category="Contains" />
+    <Link Source="ЛексемаСобрана1" Target="НеначальноеСостояние2" Category="Contains" />
+    <Link Source="НачальноеСостояние" Target="СохранитьТокен1" Category="Contains" />
+    <Link Source="НеначальноеСостояние" Target="СохранитьТокен" Category="Contains" />
+    <Link Source="НетПерехода" Target="4046902f-fb07-4b39-9209-e32af9c7f44a" Bounds="310.379144697401,-312.555583496094,63.2820966237205,43.9131292790204" />
+    <Link Source="НетПерехода" Target="ФинальноеСостояние" Bounds="223.928401373169,-312.555583496094,53.6783608573954,49.5296471752347" />
+    <Link Source="ОбычнаяРабота" Target="НачальноеСостояние" Bounds="-141.498569782975,-79.6363244159131,1.2470967885414,21.0159168536572" />
+    <Link Source="ОбычнаяРабота" Target="НеначальноеСостояние" Bounds="-141.193935519509,-32.6604075622559,2.30325155869045,27.8136563384125" />
+    <Link Source="ПервыйСимволВТекстеИлиВЭтойЛексеме" Target="НачальноеСостояние2" Bounds="122.629453307351,-142.022587310091,2.44543920710208,21.0601802361535" />
+    <Link Source="ТекущееСостояниеПринудительноГенерируетТокен1" Target="НеначальноеСостояние1" Bounds="126.288056981381,-14.0977518879562,1.53070357035921,26.1026714550961" />
+    <Link Source="ФинальноеСостояние" Target="ЛексемаНеСобрана1" Category="Contains" />
+    <Link Source="ФинальноеСостояние" Target="ЛексемаСобрана" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="Category1" Label="Category 1" Background="#FFE51400" IsTag="True" />
+    <Category Id="Category10" Label="Category 10" Background="#FF672878" IsTag="True" />
+    <Category Id="Category2" Label="Category 2" Background="#FF339933" IsTag="True" />
+    <Category Id="Category3" Label="Category 3" Background="#FF3EBCED" IsTag="True" />
+    <Category Id="Category4" Label="Category 4" Background="#FF1BA1E2" IsTag="True" />
+    <Category Id="Category5" Label="Category 5" Background="#FF9B4F96" IsTag="True" />
+    <Category Id="Category7" Label="Category 7" Background="#FF347A30" IsTag="True" />
+    <Category Id="Category8" Label="Category 8" Background="#FF44CCCC" IsTag="True" />
+    <Category Id="Comment" Label="Comment" Description="Represents a user defined comment on the diagram" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="Comments" />
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+  </Categories>
+  <Properties>
+    <Property Id="Background" Label="Background" Description="The background color" DataType="System.Windows.Media.Brush" />
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="IsTag" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Category 5" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Category5')" />
+      <Setter Property="Background" Value="#FF9B4F96" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Category 10" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Category10')" />
+      <Setter Property="Background" Value="#FF672878" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Category 3" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Category3')" />
+      <Setter Property="Background" Value="#FF3EBCED" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Category 4" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Category4')" />
+      <Setter Property="Background" Value="#FF1BA1E2" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Category 2" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Category2')" />
+      <Setter Property="Background" Value="#FF339933" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Category 7" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Category7')" />
+      <Setter Property="Background" Value="#FF347A30" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Category 1" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Category1')" />
+      <Setter Property="Background" Value="#FFE51400" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Comment" ValueLabel="Has comment">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>

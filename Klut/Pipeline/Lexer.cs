@@ -29,6 +29,7 @@ namespace Klut.Pipeline
         {
             for ( int i = 0; i < eventArgs.Count; i++ )
             {
+                // todo: handle exceptions
                 _dfa.Transit( InputStream.Receive() );
             }
         }
@@ -36,6 +37,7 @@ namespace Klut.Pipeline
         private void InputStream_EndOfStreamReceived( object sender,
             TextStream.EndOfStreamReceivedEventArgs eventArgs )
         {
+            // todo: handle exceptions
             _dfa.Complete();
             OutputStream.SendEndOfStream();
         }

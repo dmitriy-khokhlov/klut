@@ -117,7 +117,7 @@ namespace Klut.FinitAutomata
 
         private bool TryRecognizeToken()
         {
-            if ( _currentState.IsFinal )
+            if ( _currentState.IsFinal && _lexeme.Length > 0 )
             {
                 TokenRecognized( this,
                     new TokenRecognizedEventArgs(
