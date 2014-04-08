@@ -6,7 +6,7 @@ namespace Klut.Pipeline
 {
     class Lexer
     {
-        private Dfa _dfa = new Dfa();
+        private readonly Dfa _dfa = new Dfa();
 
         public TextStream InputStream { get; private set; }
 

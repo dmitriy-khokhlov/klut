@@ -5,7 +5,7 @@ namespace Klut.Streams
 {
     class Stream<T>
     {
-        private Queue<T> _queue = new Queue<T>();
+        private readonly Queue<T> _queue = new Queue<T>();
 
         public void Send( T item )
         {
